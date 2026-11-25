@@ -13,7 +13,7 @@ async function getProducts(){
     console.log(response.data)
 }
 
-getProducts()
+//getProducts()
 
 async function createProduct() {
     
@@ -39,4 +39,11 @@ async function searchProducts(){
     }) //Requisição do tipo GET
     console.log(response.data)
 }
-searchProducts()
+//searchProducts()
+
+async function getOneProduct() {
+    
+    const response = await productsApi.get("/products/2")   // -> /2 fará buscar o produto de ID 2
+    console.log(response.data)
+}
+getOneProduct()
