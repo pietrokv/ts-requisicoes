@@ -17,8 +17,9 @@ async function getProducts(){
 
 async function createProduct() {
     
-    const body = {
-        name: "Notebook",
+    try {
+        const body = {
+      //  name: "Notebook",
         description: "Macbook air, M1 2020",    
         price: 3700
         
@@ -26,8 +27,14 @@ async function createProduct() {
 
     const response = await productsApi.post("/products", body)      //Requisição do tipo POST
     console.log(response)
+    
+    } catch (error) {
+        console.log("--Ocorreu um erro--")
+        console.log(error)
+    }
+
 }
-//createProduct()
+createProduct()
 
 async function searchProducts(){
     const response = await productsApi.get("/products", {
@@ -50,4 +57,4 @@ async function getOneProduct() {
     const response = await productsApi.get("/products/2")   // -> /2 fará buscar o produto de ID 2
     console.log(response.data)
 }
-getOneProduct()
+//getOneProduct()
