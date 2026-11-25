@@ -27,4 +27,16 @@ async function createProduct() {
     const response = await productsApi.post("/products", body)      //Requisição do tipo POST
     console.log(response)
 }
-createProduct()
+//createProduct()
+
+async function searchProducts(){
+    const response = await productsApi.get("/products", {
+
+        params: {
+            search: "note"                          //Buscar itens
+        }
+
+    }) //Requisição do tipo GET
+    console.log(response.data)
+}
+searchProducts()
