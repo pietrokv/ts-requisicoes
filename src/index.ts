@@ -32,6 +32,10 @@ async function createProduct() {
 async function searchProducts(){
     const response = await productsApi.get("/products", {
 
+/*        headers: {
+            Authorization: "123"
+        },                              */
+
         params: {
             search: "note"                          //Buscar itens
         }
